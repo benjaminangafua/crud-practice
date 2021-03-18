@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Work1</title>
+    <style>
+        body {
+            display: grid;
+            justify-content: center;
+        }
+        /* BONUS */
+        /* ADD STYLE TO YOUR WORK */
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>NAME OF STUDENTS PER CLASS</h1>
+    </header>
+    <section>
+        <div>
+            <h3>Grade 10</h3>
+            <ol id="grade-10">
+                <!-- TODO 4 -->
+                <!-- YOUR LIST ITEMS GO HERE -->
+            </ol>
+        </div>
+
+        <div>
+            <h3>Grade 11</h3>
+            <ol id="grade-11">
+                <!-- TODO 5 -->
+                <!-- YOUR LIST ITEMS GO HERE -->
+            </ol>
+        </div>
+
+        <div>
+            <h3>Grade 12</h3>
+            <ol id="grade-12">
+                <!-- TODO 6 -->
+                <!-- YOUR LIST ITEMS GO HERE -->
+            </ol>
+        </div>
+    </section>
+
+    <script>
+        // TODO 3
+        // MAKE A GET REQUEST HERE AND DISPLAY THE RESPONSE IN THE LIST ELEMENTS ABOVE
+        let x = fetchJson = () => {
+            fetch("/names")
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log(data)
+                    let grade_10 = data['10th grade'];
+                    grade_10.forEach(element => {
+                        document.querySelector("#grade-10").insertAdjacentHTML("beforeend",
+                            `<li>${element} </li>`
+                        )
+
+                    })
+                    let grade_11 = data['11th grade'];
+                    grade_11.forEach(element => {
+                        document.querySelector("#grade-11").insertAdjacentHTML("beforeend",
+                            `<li>${element} </li>`
+                        )
+
+                    })
+                    let grade_12 = data['12th grade'];
+                    grade_12.forEach(element => {
+                        document.querySelector("#grade-12").insertAdjacentHTML("beforeend",
+                            `<li>${element} </li>`
+                        )
+
+                    })
+                })
+        }
+        x();
+
+        // let jj = (data["nameBody"]);
+        // // console.log(data.nameBody)
+        // jj.forEach(element => {
+        //     console.log(element)
+        // });
+        /*
+        let body = '';
+        req.on("data", (data) => {
+            body += data;
+            console.log("What is this body?", body)
+        });
+        req.on("end", () => {
+            fs.readFile("./names.json", "utf8", (err, data) => {
+                let nameBody = JSON.parse(data);
+                console.log('See Json body', nameBody)
+            })
+        })
+        */
+    </script>
+</body>
+
+</html>
