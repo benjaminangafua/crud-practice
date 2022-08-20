@@ -1,11 +1,16 @@
-const express = require("express")
+const regForm = ((req,res)=>res.render('index') )
 
-
-const about = ((req,res)=>{
-    res.json({"hi":"How are you"})
+const getForm = ((req,res)=>{
+    res.json(req.body)
+    console.log(req.body);
 })
 
-module.exports = about
+
+module.exports = {
+    regForm,
+    getForm
+
+}
 
 // const getProducts = ((req, res) => {
 //     res.json(products)

@@ -4,20 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="U-XA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <h1>Hello</h1>
+    <h1>Contact Form</h1>
     <p>You can fill the below form to get in touch with us</p>
-    <form>
+    <form id="form" method="post" action="/getForm">
         <label for="name">
             Name:
-            <input type="text">
+            <input name="name" id="name" type="text">
         </label> <br> <br>
         <label for="gender"> Gender:
-            <input type="radio" name="gender"> Male
-            <input type="radio" name="gender"> Female
+            <input type="radio" id="gender" name="gender"> Male
+            <input type="radio" id="gender" name="gender"> Female
         </label>
+        <input type="submit" value="SUBMIT">
     </form>
+    <script>
+        const name = document.getElementById("name");
+        const gender = document.getElementById("gender");
+        let btn = document.querySelector("input[type=submit]")
+        btn.addEventListener("click", ()=>{
+            fetch("http://127.0.0.1:4000/", {
+                method: "POST",
+                body: {
+                    gender:gender,
+                    name:name
+                },
+                header: {"Content-Type":"application/json"}
+            }).then(res=>res.json())
+            .then(data=>console.log(data))
+        console.log(gender)
+        })
+    </script>
 </body>
 </html>
