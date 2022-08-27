@@ -32,6 +32,7 @@ const getFormData =(req,res)=>{
         let json = data
         if(!err){             
             res.send(JSON.parse(data));
+            
         }
     })
 }

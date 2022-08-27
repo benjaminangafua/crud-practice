@@ -11,18 +11,26 @@
 <body>
     <h1>Contact Form</h1>
     <p>You can fill the below form to get in touch with us</p>
-    <form id="form" method="post" action="/getForm">
+    <br>
+    <a href="/">View Contact</a>
+    <form id="form" method="post" action="/form">
         <label for="name">
             Name:
             <input name="name" id="name" type="text">
         </label> <br> <br>
+        <label for="phone"> Phone:
+            <input type="type" id="phone" name="phone">
+        </label> <br> <br>
+        <label for="address"> Address:
+            <input type="type" id="address" name="address">
+        </label>  <br> <br>
         <label for="gender"> Gender:
             <input type="radio" id="gender" name="gender" value="Male"> Male
             <input type="radio" id="gender" name="gender" value="Female"> Female
-        </label>
+        </label><br><br></br>
         <input type="submit"   id="sub" value="SUBMIT">
-    </form>
-    <script>
+</form>
+      <!--   <script>
         const obj = {
                 name : document.getElementById("name"),
                 gender : document.getElementById("gender")
@@ -41,6 +49,6 @@
             console.log(gender)
             // window.href = "/getForm"
         })
-    </script>
+    </script> -->
 </body>
 </html>

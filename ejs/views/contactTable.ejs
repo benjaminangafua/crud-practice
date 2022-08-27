@@ -13,15 +13,16 @@
         <thead>
             <th>No.</th>
             <th>Name</th>
-            <th>Contact</th>
+            <th>Gender</th>
+            <th>Phone</th>
             <th>Location</th>
         </thead>
         <tbody>
             <tr>
             </tr>
         </tbody>
-    </table>
-
+    </table> <br><br></br>
+    <a href="/form">Add Contact</a>
     <script>
         const TR = document.querySelector("tr")
         fetch("http://127.0.0.1:4000/getForm")
@@ -33,6 +34,8 @@
                 <td>${i}</td>
                 <td>${element.name}</td>
                 <td>${element.gender}</td>                
+                <td>${element.phone}</td>                
+                <td>${element.address}</td>                
                 `
                 )
                 console.log(element)
