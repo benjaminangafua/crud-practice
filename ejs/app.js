@@ -8,12 +8,15 @@ const port =4_000
 
 
 // Open ejs files
+
 app.set('view engine', 'ejs');
 
 // Serve static files
+
 app.use(express.static('public'))
 
 // Get form data
+
 app.use( express.urlencoded({ extended: true }))
 
 

@@ -19,26 +19,29 @@ const regForm = ((req,res)=>res.render('index') );
 const sendFormDataToJson = ((req,res)=>{
     fs.readFile(path, {encoding:"utf-8"}, (err, data)=>{
         let dat = JSON.parse(data)
-        dat.push( req.body)
+        dat.push(req.body)
         if(err)
             console.error({err})
         fs.writeFile(path, JSON.stringify(dat), er=>console.error({er}))
     })
-    res.json(req.body)
 }) 
 
+// Separate the routes to send data
 const getFormData =(req,res)=>{
-    res.render("contactTable")
     fs.readFile(path, {encoding:"utf-8"}, (err, data)=>{
         let json = data
-        if(!err){
-            console.log(json)
-            return json
+        if(!err){             
+            res.send(JSON.parse(data));
         }
     })
+}
+const displayContact =(req, res)=>{
+    res.render("contactTable") 
+
 }
 module.exports = {
     regForm,
     sendFormDataToJson,
-    getFormData
+    getFormData,
+    displayContact
 }

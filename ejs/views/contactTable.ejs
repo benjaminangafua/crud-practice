@@ -18,18 +18,27 @@
         </thead>
         <tbody>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
             </tr>
         </tbody>
     </table>
 
     <script>
+        const TR = document.querySelector("tr")
         fetch("http://127.0.0.1:4000/getForm")
         .then(res=>res.json())
-        .then(data=>console.log(data))
+        .then(data=>{
+            data.forEach((element,i) => {
+                TR.insertAdjacentHTML("afterend",
+                `
+                <td>${i}</td>
+                <td>${element.name}</td>
+                <td>${element.gender}</td>                
+                `
+                )
+                console.log(element)
+            });
+            
+        })
     </script>
  </body>
 </html>
