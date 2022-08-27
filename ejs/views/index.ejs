@@ -29,26 +29,6 @@
             <input type="radio" id="gender" name="gender" value="Female"> Female
         </label><br><br></br>
         <input type="submit"   id="sub" value="SUBMIT">
-</form>
-      <!--   <script>
-        const obj = {
-                name : document.getElementById("name"),
-                gender : document.getElementById("gender")
-                }
-        let btn = document.getElementById("sub")
-        btn.addEventListener("click", ()=>{
-            fetch("localhost:4000/getForm", {
-                method: "POST",
-                header: {"Content-Type":"application/json"},
-                body: JSON.stringify(obj)
-            }).then(res=>res.json())
-            .then(data=>
-            {
-                console.log(data)
-            })
-            console.log(gender)
-            // window.href = "/getForm"
-        })
-    </script> -->
+    </form>
 </body>
 </html>
