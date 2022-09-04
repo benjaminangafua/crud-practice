@@ -5,7 +5,7 @@ const router = express.Router()
 
 router.get('/', aboutController.displayContact);
 router.get('/form', aboutController.regForm);
-router.post("/getForm", aboutController.sendFormDataToJson)
+router.post("/form", aboutController.sendFormDataToJson)
 router.get('/getForm', aboutController.getFormData);
 // router.get("/contact",aboutController)
 

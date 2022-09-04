@@ -9,6 +9,7 @@ const path = "data.json";
  * @returns 
  */
 const regForm = ((req,res)=>res.render('index') );
+const displayContact =(req, res)=>res.render("contactTable") ;
 
 /**
  * A function that sends data to the client from a form
@@ -24,6 +25,7 @@ const sendFormDataToJson = ((req,res)=>{
             console.error({err})
         fs.writeFile(path, JSON.stringify(dat), er=>console.error({er}))
     })
+    res.send(req.body)
 }) 
 
 // Separate the routes to send data
@@ -36,13 +38,10 @@ const getFormData =(req,res)=>{
         }
     })
 }
-const displayContact =(req, res)=>{
-    res.render("contactTable") 
-
-}
 module.exports = {
     regForm,
+    displayContact, 
+       
     sendFormDataToJson,
     getFormData,
-    displayContact
 }

@@ -5,7 +5,8 @@
     <meta http-equiv="UX-A-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="/image/favicon.ico">
-
+    <link rel="stylesheet" href="/css/style.css">
+    
     <title>Contact Table</title>
  </head>
  <body>
@@ -19,6 +20,7 @@
         </thead>
         <tbody>
             <tr>
+
             </tr>
         </tbody>
     </table> <br><br></br>
@@ -28,19 +30,19 @@
         fetch("http://127.0.0.1:4000/getForm")
         .then(res=>res.json())
         .then(data=>{
+            data.reverse()
+            let num = data.length
             data.forEach((element,i) => {
                 TR.insertAdjacentHTML("afterend",
                 `
-                <td>${i}</td>
+                <td>${num}</td>
                 <td>${element.name}</td>
                 <td>${element.gender}</td>                
                 <td>${element.phone}</td>                
                 <td>${element.address}</td>                
-                `
-                )
-                console.log(element)
+                `)
+                num--
             });
-            
         })
     </script>
  </body>
