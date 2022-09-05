@@ -31,17 +31,15 @@ const sendFormDataToJson = ((req,res)=>{
 // Separate the routes to send data
 const getFormData =(req,res)=>{
     fs.readFile(path, {encoding:"utf-8"}, (err, data)=>{
-        let json = data
         if(!err){             
             res.send(JSON.parse(data));
-            
         }
     })
 }
 module.exports = {
     regForm,
     displayContact, 
-       
+
     sendFormDataToJson,
     getFormData,
 }

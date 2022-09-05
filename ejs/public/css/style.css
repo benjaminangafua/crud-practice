@@ -1,8 +1,15 @@
 body{
     background-color: orange;
 }
-table,thead,th,tbody, tr, td
+table,thead,th, td
 {
     border-collapse: collapse;
-    border: 3px solid black;
+    border: 2px solid black;
+}
+
+.contactH3{
+    text-align: center;
+}
+table{
+    margin: auto 20%;
 }

@@ -10,6 +10,7 @@
     <title>Contact Table</title>
  </head>
  <body>
+    <h3 class="contactH3">Contact</h3>
     <table>
         <thead>
             <th>No.</th>
@@ -23,7 +24,7 @@
 
             </tr>
         </tbody>
-    </table> <br><br></br>
+    </table> <br>
     <a href="/form">Add Contact</a>
     <script>
         const TR = document.querySelector("tr")
@@ -35,7 +36,7 @@
             data.forEach((element,i) => {
                 TR.insertAdjacentHTML("afterend",
                 `
-                <td>${num}</td>
+                <td>${num}.</td>
                 <td>${element.name}</td>
                 <td>${element.gender}</td>                
                 <td>${element.phone}</td>                
