@@ -3,8 +3,9 @@ const path = require("path")
 
 const app = express()
 const route = require("./router/router")
-// require("dot.eve")process.env.PORT
-const port =4_000
+const dotenv = require("dotenv").config({debug:true})
+const port =dotenv.parsed.PORT
+console.log(dotenv)
 
 
 // Open ejs files

@@ -1,5 +1,7 @@
 const { json } = require("express");
 const fs = require("fs");
+const dotenv = require("dotenv").config({debug:true})
+const port =dotenv.parsed.PORT
 const path = "data.json"; 
 
 /**
@@ -9,7 +11,7 @@ const path = "data.json";
  * @returns 
  */
 const regForm = ((req,res)=>res.render('index') );
-const displayContact =(req, res)=>res.render("contactTable") ;
+const displayContact =(req, res)=>res.render("contactTable",{port}) ;
 
 /**
  * A function that sends data to the client from a form

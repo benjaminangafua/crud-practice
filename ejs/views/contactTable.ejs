@@ -28,7 +28,7 @@
     <a href="/form">Add Contact</a>
     <script>
         const TR = document.querySelector("tr")
-        fetch("http://127.0.0.1:4000/getForm")
+        fetch("http://127.0.0.1:3000/getForm")
         .then(res=>res.json())
         .then(data=>{
             data.reverse()
